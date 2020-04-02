@@ -1,0 +1,51 @@
+---
+preheader: ''
+
+letterWidth: 600
+letterMinWidth: 340
+
+bodyC: null
+bgContainerC: '#060C1C'
+bgC: '#101423'
+
+textC: '#ffffff'
+textAltC: '#2f3542'
+linkC: '#1e90ff'
+
+accentC: '#ffa502'
+btnC: '#0E3B92'
+btnAccentC: '#920E0E'
+borderC: '#A0A0A0'
+---
+
+
+{% extends "layouts/_simple.twig" %}
+{% block content %}
+
+    {# WRAPPER TABLE #}
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin:0; padding:0; width: 100%;">
+        <tr>
+            <td style="vertical-align:top;">
+
+                {# CONTAINER TABLE #}
+                {{ mx.msStart(letterWidth, 'auto', 'top') }}
+
+                <table align="center" cellpadding="0" cellspacing="0" border="0" style="min-width: {{ letterMinWidth }}px; width: 100%; max-width: {{ letterWidth }}px; margin: 0 auto;{% if bgContainerC %} background-color: {{ bgContainerC }};{% endif %}">
+                    {% include 'parts/header.twig' %}
+                    {% include 'parts/hero.twig' %}
+                    {% include 'parts/info.twig' %}
+                    {% include 'parts/map1.twig' %}
+                    {% include 'parts/map2.twig' %}
+                    {% include 'parts/buttons.twig' %}
+                    {% include 'parts/footer.twig' %}
+                </table>
+
+                {{ mx.msEnd() }}
+                {# /CONTAINER TABLE #}
+
+            </td>
+        </tr>
+    </table>
+    {# /WRAPPER TABLE #}
+
+{% endblock %}
